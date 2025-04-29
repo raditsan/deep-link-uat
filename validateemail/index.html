@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .image-container {
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            width: 204px;
+            height: 204px;
+        }
+        h1 {
+            color: #333;
+            margin: 0;
+            font-size: 24px;
+        }
+        p {
+            color: #666;
+            margin: 10px 0 20px;
+            font-size: 16px;
+        }
+        .button-link {
+            display: inline-block;
+            background-color: #004D43;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .button-link:hover {
+/*             background-color: #34495e; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="/illustration_flow_success.png" alt="Verification Image">
+        </div>
+        <h1>Verifikasi Email Berhasil!</h1>
+        <p>Email kamu telah berhasil diverifikasi. Sekarang, kamu bisa melanjutkan ke aplikasi dan menikmati layanan kami.</p>
+        <!-- Deep Link Button -->
+        <a id="deepLinkButton" href="#" class="button-link">Buka Aplikasi Dash!</a>
+    </div>
+
+    <script>
+        // Function to extract path and query parameters from the current URL
+        function getDeepLinkFromUrl() {
+            const url = new URL(window.location.href); // Parse the current URL
+            let path = url.pathname; // Extract the path (e.g., "/validateemail")
+            const params = url.search; // Extract the query parameters (e.g., "?state=ocr")
+
+            // Remove the leading slash from the path
+            if (path.startsWith('/')) {
+                path = path.substring(1); // Strip the leading slash
+            }
+
+            // Construct the deep link
+            return `pegadaianuat://${path}${params}`;
+        }
+
+        // Set the button's href attribute to the constructed deep link
+        document.addEventListener('DOMContentLoaded', () => {
+            const deepLink = getDeepLinkFromUrl(); // Get the deep link
+            const button = document.getElementById('deepLinkButton');
+            button.href = deepLink;
+
+            // Optional: Add a fallback mechanism if the app is not installed
+            // const fallbackUrl = 'https://www.example.com/fallback'; // Replace with your fallback URL
+            // let appOpened = false;
+
+            // button.addEventListener('click', () => {
+            //     setTimeout(() => {
+            //         if (!appOpened) {
+            //             window.location.href = fallbackUrl; // Redirect to fallback URL
+            //         }
+            //     }, 500); // Adjust the timeout as needed (e.g., 500ms)
+            // });
+        });
+    </script>
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

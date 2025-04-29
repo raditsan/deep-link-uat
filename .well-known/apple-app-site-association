@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "ABTDFQ339U.id.co.pegadaian.digital.develop",
+        "paths": ["/validateemail", "/validateemail/*"]
+      },
+      {
+        "appID": "ABTDFQ339U.id.co.pegadaian.digital",
+        "paths": ["/validateemail", "/validateemail/*"]
+      }
+    ]
+  }
+}
