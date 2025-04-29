@@ -4,7 +4,7 @@
     "details": [
       {
         "appID": "ABTDFQ339U.id.co.pegadaian.digital.uat",
-        "paths": ["*", ""/validateemail", "/validateemail/*"]
+        "paths": ["*", "/validateemail", "/validateemail/*"]
       }
     ]
   }
